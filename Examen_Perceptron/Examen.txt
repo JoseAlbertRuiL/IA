@@ -1,0 +1,278 @@
+           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            EXAMEN TEÓRICO — PERCEPTRÓN, MLP Y CNN (GRUPO B)
+
+                            Eduardo Alcaraz
+           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+1 Datos del alumno
+══════════════════
+
+  ━━━━━━━━━━━
+   Jose Alberto Ruiz Lopez    
+   Grupo   B 
+   03/11/2026   
+  ━━━━━━━━━━━
+
+
+2 Pregunta 1 — Por qué no basta “una sola neurona”
+══════════════════════════════════════════════════
+
+  1. Resume el funcionamiento de un perceptrón como “regla de decisión”.
+  2. Explica la noción de *frontera lineal* sin escribir fórmulas.
+  3. Da un ejemplo (aunque sea inventado) donde esa frontera *no*
+     alcanza.
+
+
+2.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+
+  1- Un perceptron recibe caracteristicas, da a cada una un peso segun la 
+  importancia, y0 combina esos valores con el sesgo. Compara el resultado 
+  y decide a cual de dos clases pertenece el ejemplo
+
+  2- Divide datos mediante una linea recta cuando hay dos caracteristicas. Cada lado
+  corresponde a una clases
+
+  3- El XOR, cuando una alarma se activa si uno de dos sensores esta prendido
+  por ejemplo, cuando hay un 0,1 o un 1,0 se activaria el sensor, pero cuando hay un
+  0,0 y un 1,1, no deberia activarse
+
+
+  └────
+
+
+3 Pregunta 2 — CNN: de píxeles a mapas
+══════════════════════════════════════
+
+  1. ¿Qué problema de *estructura espacial* ignora un MLP si aplana la
+     foto?
+  2. ¿Qué significa que un mismo filtro se aplique en toda la imagen?
+  3. Además de clasificación de objetos, cita *dos* usos donde la CNN
+     encaja bien.
+
+
+3.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+
+  1- Cuando se aplana la imagen, un mlp no incorp
+
+  2- Significa que se rwutilizan los mismos pesos de ese filtro en distintas
+  posiciones. Asi se podria detectar un patron, ya sea un borde o algo asi. 
+  Y puede hacer un mapa de caracteristicas  con las respuestas y creo que 
+  tambien se pueden reducir la cantidad de parametros
+
+  3- Para imagenes que se pueden utilizar en medicina, ya sea para delimitar 
+  los organos o lesiones, tambien para quitar el ruido de fotos donde se puede 
+  generar imagenes mas limpias
+
+  └────
+
+
+4 Pregunta 3 — Softmax, clases y decisiones
+═══════════════════════════════════════════
+
+  1. Diferencia un problema *binario* de uno *multiclase* en términos de
+     salida de la red.
+  2. ¿Qué lectura le das a las probabilidades que produce un softmax?
+  3. Imagina tres carpetas de imágenes (tres riesgos o tres animales):
+     ¿qué arquitectura de *salida* usarías y por qué?
+
+
+4.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+
+  1- 
+
+  2- softmax transforma los puntajes de salida en probabilidades que suman
+  uno. Es mediante la preferencia relativa. Normalmente se elige el mayor.
+  una probabilida alta no grantiza que una prediccion sea correcta.
+ 
+  3- Si cada imagen pertenece a una sola de tre, se usaria una capa de salida 
+  de tres neuronas con softmax, en donde se haria una por categoria. Esto permite
+  que se pueda comparar las tres probabilidades y elegir una clase.
+
+  └────
+
+
+5 Pregunta 4 — MLP: profundidad con sentido
+═══════════════════════════════════════════
+
+  1. ¿Qué ganas al apilar capas densas con activaciones no lineales?
+  2. ¿Qué riesgo aparece si la red es *demasiado* grande para tus datos?
+  3. Relaciona “capa oculta” con la idea de aprender representaciones
+     intermedias (en palabras simples).
+
+
+5.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+
+  1- permite combinar caracteristicas y aprender relaciones complejas y frontera
+  curvas. Si no existen esas activaciones, seguiria siendo una sola transformación
+  lineal
+  
+  2- Una red muy grande puede sobreajustarse , donde memoriza los detalles 
+  y el ruido, logra buenos resultados/predicciones con esos ejemplos y falla con datos
+  nuevos, y obviamente tiene un consumo de recursos mayor
+  
+  3- Una capa oculta convierte las entradas en caracteristicas intermedias utiles
+  para realizar la tarea.
+
+  └────
+
+
+6 Pregunta 5 — Entrenamiento sin magia
+══════════════════════════════════════
+
+  1. Explica qué es una *época* a nivel intuitivo.
+  2. ¿Hacia qué “objetivo” se mueven los pesos cuando hablamos de
+     minimizar el error?
+  3. Si el learning rate es absurdo (muy grande o muy chico), ¿qué
+     síntomas conceptuales esperarías?
+
+
+6.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+
+  1- Es una pasada completa por los ejemplos del conjunto/segmento de
+     entrenamiento
+
+  2- Los pesos se ajustan para reducir la funcion de perdida, que es lo que mide
+  la diferencia entre las predicciones y las respuestas que se esperan. 
+
+  3- Los ajustes pueden saltarse las zonas de menor perdida y asi mismo provocar divergencia
+  Con uno muy pequeño , el aprendizaje puede ser muy lenyo y parecer estancado
+  ya que los cambios en cada pasada son minimos
+
+  └────
+
+
+7 Pregunta 6 — Bloques de una CNN
+═════════════════════════════════
+
+  Sin matemáticas, di el papel de cada pieza:
+  1. Kernel / filtro convolucional
+  2. Función de activación después de conv
+  3. Max pooling
+  4. Capa densa + softmax al final de un clasificador
+
+
+7.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+
+  1- Es un conjunto pequeño de pesos que examina regioneslocales para asi detectar
+  patrones aprendidos. Sus respuestas forma lo que seria el mapa de caracteristicas
+
+  2- introduce a la no linealidad para que la red neuronal pueda aprender relaciones 
+  que sean mas complejas
+
+  3- Resume las regiones tomando su valor maximo, tambien reduce el tamaño espacial
+  de los mapas, conserva respuestas fuertes y aporta en la tolerancia a los desplazamientos
+
+  4- Combina las caracteristicas extraídas  y genera los puntajes por clase, softmax
+  los convierte o transforma la distribución de las probabilidades
+
+  └────
+
+
+8 Pregunta 7 — XOR y la historia del aprendizaje
+════════════════════════════════════════════════
+
+  1. ¿Por qué XOR se volvió un “contraejemplo” famoso?
+  2. ¿Qué elemento de un MLP permite patrones que no son una sola línea?
+  3. ¿En qué tipo de tabla/problema del mundo real seguirías usando algo
+     tan simple como un perceptrón o un modelo lineal?
+
+
+8.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+
+  1- Porque demuestra una limitación del perceptron de una sola capa, ya que
+  sus ejemplos no son linealmente separables 
+
+  2- Las capas ocultas con las activaciones no lineales transforman y combinan las
+  entradas, asi permin construir fronteras que no seria solo una recta
+
+  3- Podria usar el modelo lineal para iniciar y clasificar una (Compra o no compra
+  en una tabla con la edad, ingreso y numero de vistas). Una combinacion simple de 
+  esas variables separaria razonablemente las clases.
+
+  └────
+
+
+9 Pregunta 8 — De lo simple a lo abstracto en visión
+════════════════════════════════════════════════════
+
+  1. Contrasta lo que buscan capas tempranas vs capas profundas en una
+     CNN.
+  2. ¿Qué intuición da eso para *transfer learning* (aunque no lo hayas
+     programado)?
+  3. ¿Cuándo sospecharías que tu CNN es “profunda de más” para el
+     dataset del curso?
+
+
+9.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+
+  └────
+
+
+10 Pregunta 9 — Análisis: matching problema → modelo
+════════════════════════════════════════════════════
+
+  Elige *Perceptrón/lineal* / *MLP* / *CNN* (una opción) y justifica en
+  una frase:
+
+  1. Predecir “compra / no compra” con edad, ingreso y visitas a la web
+     (columnas numéricas).
+  2. Detectar si hay un gato en una foto.
+  3. Aproximar una frontera “curva” o a trozos en datos 2D tabulares.
+  4. ¿CNN es la herramienta natural para predecir la siguiente palabra
+     de un párrafo? Justifica y nombra una familia del curso más
+     adecuada (RNN/Transformer a nivel nombre).
+
+
+10.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+
+  └────
+
+
+11 Pregunta 10 — Análisis: auditoría de un equipo
+═════════════════════════════════════════════════
+
+  Un equipo entrega un modelo “muy preciso” en su laptop y falla con
+  datos nuevos.
+
+  1. ¿Qué diagnósticos conceptuales harías *antes* de tocar
+     hiperparámetros al azar?
+  2. Pide *dos* evidencias que deberían mostrar en la defensa (curvas,
+     separación train/val, ejemplos de error, etc.).
+  3. Redacta *tres* preguntas tuyas para comprobar si saben cuándo usar
+     perceptrón, MLP o CNN (distintas a las del Grupo A si las conoces).
+
+
+11.0.1 Respuesta
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+
+  ┌────
+
+  └────
