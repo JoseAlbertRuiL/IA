@@ -1,0 +1,444 @@
+# -*- coding: utf-8 -*-
+"""
+Datos del corpus sobre el objeto interestelar 3I/ATLAS.
+
+IMPORTANTE: cada "texto" es un RESUMEN redactado por nosotros a partir de lo que
+reportan las fuentes enlazadas (no es la transcripcion literal del articulo).
+- etiqueta "verdadera": informacion respaldada por la comunidad cientifica / verificadores.
+- etiqueta "falsa": afirmacion que circulo como noticia/rumor y fue desmentida.
+  El texto describe la afirmacion falsa tal como se difundio; el campo "verificacion"
+  explica por que es falsa.
+Antes de usarlo como evidencia, abre la URL y confirma el dato.
+"""
+
+NOTICIAS = [
+    # ------------------------------------------------------------------ IMPACTO
+    {
+        "id": "imp_f01",
+        "tema": "impacto_inminente",
+        "etiqueta": "falsa",
+        "titulo": "El cometa 3I/ATLAS viene directo hacia la Tierra y el impacto es inminente",
+        "texto": (
+            "Circularon publicaciones en redes sociales que aseguraban que el cometa 3I/ATLAS "
+            "se dirige en curso de colision contra la Tierra y que el impacto ocurriria en una "
+            "fecha concreta. Segun estos mensajes, la humanidad tendria solo unos dias para "
+            "prepararse ante una catastrofe global provocada por el objeto interestelar."
+        ),
+        "verificacion": (
+            "Falso. Las fechas virales confunden una aproximacion orbital rutinaria con un "
+            "impacto. Un riesgo real aparecera en el sistema Sentry de NASA/JPL."
+        ),
+        "fuente": "Al Jazeera / IBTimes",
+        "url": "https://www.aljazeera.com/features/2025/10/3/are-internet-rumours-of-a-comet-hurtling-towards-earth-true",
+    },
+    {
+        "id": "imp_v01",
+        "tema": "impacto_inminente",
+        "etiqueta": "verdadera",
+        "titulo": "NASA: 3I/ATLAS no representa ninguna amenaza para la Tierra",
+        "texto": (
+            "El cometa interestelar 3I/ATLAS sigue una trayectoria hiperbolica, tipica de los "
+            "objetos que solo pasan una vez por el sistema solar. Su maximo acercamiento a la "
+            "Tierra fue cercano al 19 de diciembre de 2025, a una distancia de aproximadamente "
+            "1.8 unidades astronomicas, unos 270 millones de kilometros. NASA indica que no "
+            "supone riesgo de impacto y que permanece siempre lejos de nuestro planeta."
+        ),
+        "verificacion": "Consistente con datos de NASA/JPL (Horizons) segun medios secundarios.",
+        "fuente": "IBTimes UK / Al Jazeera",
+        "url": "https://www.ibtimes.co.uk/3i-atlas-doomsday-fears-refuse-fade-persistent-myths-scientific-reassurances-december-19-nears-1762808",
+    },
+    {
+        "id": "imp_f02",
+        "tema": "impacto_inminente",
+        "etiqueta": "falsa",
+        "titulo": "El objeto soltó sondas en una trayectoria perfecta hacia la Tierra",
+        "texto": (
+            "Una afirmacion difundida en linea sostenia que 3I/ATLAS habria liberado sondas o "
+            "fragmentos que viajan en una trayectoria perfecta hacia la Tierra, como parte de "
+            "una supuesta operacion deliberada de aproximacion."
+        ),
+        "verificacion": (
+            "No respaldada. Segun JPL el cometa sigue una trayectoria hiperbolica normal y no "
+            "amenaza a la Tierra; no hay evidencia de sondas."
+        ),
+        "fuente": "IBTimes UK",
+        "url": "https://www.ibtimes.co.uk/3i-atlas-dropped-probes-perfect-trajectory-earth-new-claim-alleges-1753773",
+    },
+    {
+        "id": "imp_v02",
+        "tema": "impacto_inminente",
+        "etiqueta": "verdadera",
+        "titulo": "Por que los rumores de impacto no tienen base cientifica",
+        "texto": (
+            "Los astronomos explican que 3I/ATLAS es un visitante de paso: entra al sistema "
+            "solar, rodea el Sol y sale de nuevo hacia el espacio interestelar. Los calculos "
+            "orbitales muestran que nunca se acerca a la Tierra a menos de cientos de millones "
+            "de kilometros. Los rumores de apocalipsis aparecieron en fechas como el 19 de "
+            "diciembre y se desvanecieron cuando el objeto simplemente paso de largo."
+        ),
+        "verificacion": "Consistente con la cobertura de IBTimes y Al Jazeera.",
+        "fuente": "IBTimes UK",
+        "url": "https://www.ibtimes.co.uk/3i-atlas-doomsday-fears-refuse-fade-persistent-myths-scientific-reassurances-december-19-nears-1762808",
+    },
+
+    # ------------------------------------------------------------------ NAVE
+    {
+        "id": "nav_f01",
+        "tema": "nave_extraterrestre",
+        "etiqueta": "falsa",
+        "titulo": "Cientificos confirman que 3I/ATLAS es una nave alienigena que atacara en noviembre de 2025",
+        "texto": (
+            "Publicaciones virales afirmaron que los cientificos habian llegado a un acuerdo en "
+            "que 3I/ATLAS es una nave espacial extraterrestre que se acerca a la Tierra para "
+            "realizar un ataque sorpresa en noviembre de 2025."
+        ),
+        "verificacion": (
+            "Falso, segun Lead Stories y Snopes. Ningun consenso cientifico lo respalda; la "
+            "idea nace de malinterpretar un articulo titulado como pregunta."
+        ),
+        "fuente": "Lead Stories",
+        "url": "https://leadstories.com/hoax-alert/2025/08/fact-check-scientists-did-not-agree-that-3i-atlas-is-alien-spacecraft-approaching-earth-for-surpise-attack-in-november-2025.html",
+    },
+    {
+        "id": "nav_v01",
+        "tema": "nave_extraterrestre",
+        "etiqueta": "verdadera",
+        "titulo": "NASA: toda la evidencia indica que es un cometa ordinario, no una nave",
+        "texto": (
+            "NASA declaro que toda la evidencia apunta a que 3I/ATLAS es un cometa ordinario y "
+            "no una nave espacial. El consenso cientifico lo clasifica como un cometa natural "
+            "de origen interestelar, el tercer objeto interestelar confirmado, con una "
+            "trayectoria hiperbolica."
+        ),
+        "verificacion": "Declaracion atribuida a NASA en prensa (The Guardian, segun Lead Stories/otros).",
+        "fuente": "Newssniffer / The Guardian",
+        "url": "https://www.newssniffer.co.uk/articles/2834706/versions/16504559",
+    },
+    {
+        "id": "nav_v02",
+        "tema": "nave_extraterrestre",
+        "etiqueta": "verdadera",
+        "titulo": "Avi Loeb planteo la posibilidad tecnologica, pero como hipotesis, no como hecho",
+        "texto": (
+            "El astrofisico de Harvard Avi Loeb publico en 2025 un trabajo que se pregunta si "
+            "3I/ATLAS podria ser tecnologia extraterrestre, apoyandose en la rareza de su "
+            "trayectoria, cuyo plano orbital esta a menos de cinco grados del plano de la "
+            "eclíptica. Sin embargo, el propio planteamiento es especulativo: Loeb sugiere que "
+            "es posible, sin aportar evidencia concluyente, y otros cientificos como Michio "
+            "Kaku sostienen que es un objeto natural."
+        ),
+        "verificacion": "Hipotesis minoritaria y no demostrada; el texto la presenta asi.",
+        "fuente": "Lead Stories / IBTimes UK",
+        "url": "https://www.ibtimes.co.uk/3i-atlas-asteroid-not-alien-michio-kaku-shuts-down-avi-loebs-alien-claims-1753568",
+    },
+    {
+        "id": "nav_f02",
+        "tema": "nave_extraterrestre",
+        "etiqueta": "falsa",
+        "titulo": "Michio Kaku y Brian Cox respaldan en video que 3I/ATLAS es una nave",
+        "texto": (
+            "Aparecieron videos en los que supuestamente Michio Kaku y Brian Cox afirmaban que "
+            "3I/ATLAS es una nave espacial alienigena y que los gobiernos lo estarian ocultando."
+        ),
+        "verificacion": (
+            "Falso. Ambos denunciaron que se trata de deepfakes generados con IA, sin su "
+            "autorizacion."
+        ),
+        "fuente": "IBTimes UK",
+        "url": "https://www.ibtimes.co.uk/3i-atlas-asteroid-not-alien-michio-kaku-shuts-down-avi-loebs-alien-claims-1753568",
+    },
+
+    # ------------------------------------------------------------------ ANTICOLA
+    {
+        "id": "ant_f01",
+        "tema": "anticola",
+        "etiqueta": "falsa",
+        "titulo": "La anticola prueba que 3I/ATLAS es una nave inteligente maniobrando",
+        "texto": (
+            "Algunos titulares presentaron la anticola de 3I/ATLAS, un chorro orientado hacia el "
+            "Sol, como la prueba de que se trata de una nave inteligente que frena o maniobra "
+            "dentro de nuestro sistema solar usando propulsores."
+        ),
+        "verificacion": (
+            "Engañoso. Existe una explicacion natural publicada y no hay evidencia de "
+            "propulsion; la idea de frenado es una hipotesis minoritaria."
+        ),
+        "fuente": "IBTimes UK / WION",
+        "url": "https://www.ibtimes.co.uk/mysterious-interstellar-visitor-3i-atlas-develops-strange-anti-tail-approach-earth-1762878",
+    },
+    {
+        "id": "ant_v01",
+        "tema": "anticola",
+        "etiqueta": "verdadera",
+        "titulo": "La anticola de 3I/ATLAS tiene una explicacion natural",
+        "texto": (
+            "Los astronomos observaron en julio y agosto de 2025 una anticola, un chorro de "
+            "material dirigido hacia el Sol. Keto y Loeb propusieron un modelo natural: la "
+            "dispersion de luz solar por granos de hielo expulsados del nucleo por la "
+            "sublimacion de CO2, de modo que el chorro se extiende hacia el Sol hasta el radio "
+            "en que los granos de hielo sobreviven."
+        ),
+        "verificacion": "Modelo publicado en arXiv (2509.07771).",
+        "fuente": "arXiv / Starlust",
+        "url": "https://arxiv.org/abs/2509.07771",
+    },
+    {
+        "id": "ant_v02",
+        "tema": "anticola",
+        "etiqueta": "verdadera",
+        "titulo": "La anticola se transformo en una cola normal en septiembre",
+        "texto": (
+            "Imagenes del Telescopio Optico Nordico muestran que la anticola vista hacia el "
+            "Sol durante julio y agosto de 2025 se convirtio en una cola en septiembre. Los "
+            "autores del modelo natural elaboraron un seguimiento que explica esa transicion "
+            "con la fisica de un cometa que libera polvo y gas."
+        ),
+        "verificacion": "Reportado por observaciones de ground-based segun el borrador de Loeb.",
+        "fuente": "Avi Loeb (Medium) / Starlust",
+        "url": "https://avi-loeb.medium.com/the-anti-tail-of-3i-atlas-turned-to-a-tail-9ad2479b6633",
+    },
+    {
+        "id": "ant_f02",
+        "tema": "anticola",
+        "etiqueta": "falsa",
+        "titulo": "3I/ATLAS intenta ganar velocidad en lugar de frenar: undecima anomalia",
+        "texto": (
+            "Medios sensacionalistas hablaron de una undecima anomalia: 3I/ATLAS estaria "
+            "intentando ganar velocidad en lugar de frenar, lo que se interpreto como senal de "
+            "propulsion artificial inteligente."
+        ),
+        "verificacion": (
+            "No es una conclusion cientifica. Es una interpretacion especulativa; el consenso "
+            "sigue siendo que es un cometa natural."
+        ),
+        "fuente": "WION",
+        "url": "https://www.wionews.com/trending/3i-atlas-spacecraft-avi-loeb-trying-to-gain-speed-rather-than-slow-down-1763008420284/amp",
+    },
+
+    # ------------------------------------------------------------------ IMAGENES
+    {
+        "id": "img_f01",
+        "tema": "imagenes_falsas",
+        "etiqueta": "falsa",
+        "titulo": "Foto filtrada muestra el nucleo de 3I/ATLAS con forma de bala",
+        "texto": (
+            "Una imagen nitida con forma de bala, presentada como una foto filtrada del nucleo "
+            "de 3I/ATLAS, se difundio en X e Instagram como prueba de un objeto artificial."
+        ),
+        "verificacion": (
+            "Casi con certeza falsa. El equipo del Hubble explica que el nucleo no puede verse "
+            "directamente; la fisica y los archivos contradicen la imagen."
+        ),
+        "fuente": "Primetimer",
+        "url": "https://www.primetimer.com/features/fact-check-is-the-viral-3i-atlas-leaked-photo-real-or-fake-social-media-debates-strange-new-image",
+    },
+    {
+        "id": "img_v01",
+        "tema": "imagenes_falsas",
+        "etiqueta": "verdadera",
+        "titulo": "Hubble: el nucleo solido de 3I/ATLAS no se puede ver directamente",
+        "texto": (
+            "El telescopio Hubble observo el cometa, pero el nucleo solido, de apenas unos "
+            "kilometros de diametro, esta rodeado por la coma de gas y polvo y es demasiado "
+            "pequeno para resolverse. Durante el paso cerca de Marte su tamano angular era de "
+            "unos 0.02 segundos de arco, insuficiente para ver su forma."
+        ),
+        "verificacion": "Consistente con IBTimes y reportes del equipo del Hubble.",
+        "fuente": "IBTimes UK / inkl",
+        "url": "https://www.ibtimes.co.uk/solid-core-3i-atlas-still-cannot-directly-seen-hubble-reveals-1755824",
+    },
+    {
+        "id": "img_f02",
+        "tema": "imagenes_falsas",
+        "etiqueta": "falsa",
+        "titulo": "Foto desde Argentina captura 3I/ATLAS en el cielo nocturno",
+        "texto": (
+            "Una fotografia atribuida a un observador en Cordoba, Argentina, se presento como "
+            "una captura espectacular de 3I/ATLAS en el cielo nocturno y se compartio de forma "
+            "masiva."
+        ),
+        "verificacion": (
+            "Casi con seguridad generada con IA: los patrones de estrellas no coinciden con el "
+            "cielo austral de Cordoba y el autor ya habia publicado imagenes astronomicas de IA."
+        ),
+        "fuente": "IBTimes UK",
+        "url": "https://www.ibtimes.co.uk/truth-ai-hoax-shocking-photo-argentina-claims-capture-3i-atlas-night-sky-1750427",
+    },
+    {
+        "id": "img_f03",
+        "tema": "imagenes_falsas",
+        "etiqueta": "falsa",
+        "titulo": "Video muestra un timelapse real del cometa desde un telescopio",
+        "texto": (
+            "Circularon videos presentados como un timelapse del cometa interestelar 3I/ATLAS "
+            "tomado por el telescopio Gemini North, y otro clip que supuestamente mostraba al "
+            "cometa en el espacio."
+        ),
+        "verificacion": (
+            "Falso, segun Lead Stories: el primero no corresponde a la imagen real de Gemini "
+            "North del 15 de julio de 2025 y el segundo muestra un paramecio, un organismo "
+            "microscopico."
+        ),
+        "fuente": "Lead Stories",
+        "url": "https://leadstories.com/hoax-alert/2025/10/fact-check-video-does-not-show-interstellar-comet-3iatlas-in-outer-space-its-a-microscopic-paramecium.html",
+    },
+    {
+        "id": "img_f04",
+        "tema": "imagenes_falsas",
+        "etiqueta": "falsa",
+        "titulo": "Imagenes filtradas reaparecen con nuevos hallazgos de una nave",
+        "texto": (
+            "En diciembre de 2025 volvieron a hacerse virales imagenes presentadas como "
+            "filtradas, ahora recortadas y con un relato de nave alienigena."
+        ),
+        "verificacion": (
+            "Ya habian sido desmentidas: los originales tenian superposiciones de texto con "
+            "errores tipicos de IA."
+        ),
+        "fuente": "IBTimes UK",
+        "url": "https://www.ibtimes.co.uk/previously-debunked-leaked-images-3i-atlas-go-viral-again-shocking-new-findings-1761073",
+    },
+]
+
+# ---------------------------------------------------------------------------
+# TUITS (X). Son PARAFRASIS de los fragmentos que aparecen en buscadores, no el
+# texto literal. Para citar textualmente, abre la URL del tuit.
+# ---------------------------------------------------------------------------
+_TUITS = [
+    {
+        "id": "tui_f01", "tema": "nave_extraterrestre", "etiqueta": "falsa",
+        "titulo": "Falso rotulo de CNN: 'IT'S GETTING SERIOUS', el cometa contacto a la Tierra",
+        "texto": (
+            "BREAKING: CNN confirma que el cometa 3I/ATLAS ya hizo contacto con la Tierra. "
+            "'It's getting serious'. Imagen con logo y rotulo de noticiero."
+        ),
+        "verificacion": "Falso. CNN nunca reporto eso ni uso ese rotulo (Lead Stories).",
+        "fuente": "Publicacion en X (22 oct 2025) / Lead Stories",
+        "url": "https://leadstories.com/hoax-alert/2025/10/fact-check-cnn-did-not-report-comet3-iatlas-contacted-earth.html",
+    },
+    {
+        "id": "tui_f02", "tema": "nave_extraterrestre", "etiqueta": "falsa",
+        "titulo": "Tuit viral: nave alienigena hostil rumbo a la Tierra",
+        "texto": (
+            "ALERTA: una nave alienigena hostil se dirige hacia la Tierra, es 3I/ATLAS. "
+            "Compartan antes de que lo borren. El tuit supero 1.4 millones de vistas."
+        ),
+        "verificacion": "Falso. Snopes concluyo que no se basaba en la trayectoria real del objeto.",
+        "fuente": "Publicacion en X / Snopes",
+        "url": "https://www.ibtimes.co.uk/3i-atlas-asteroid-not-alien-michio-kaku-shuts-down-avi-loebs-alien-claims-1753568",
+    },
+    {
+        "id": "tui_f03", "tema": "nave_extraterrestre", "etiqueta": "falsa",
+        "titulo": "Tuit: patron Fibonacci en los pulsos de 3I/ATLAS es un mensaje alienigena",
+        "texto": (
+            "Los pulsos de senal de 3I/ATLAS siguen la secuencia de Fibonacci y decodificados "
+            "forman un mensaje. Esto no es natural. Los cientificos no quieren que lo sepas."
+        ),
+        "verificacion": "Falso. NASA y SETI lo desmintieron; no hay datos ni confirmacion de observatorios.",
+        "fuente": "Publicacion en X de @AstronomyVibes / Latestly",
+        "url": "https://www.latestly.com/social-viral/fact-check/did-scientists-detect-fibonacci-pulse-patterns-from-3iatlas-nasa-and-seti-debunk-viral-claim-of-alien-message-from-interstellar-comet-7181439.html",
+    },
+    {
+        "id": "tui_f04", "tema": "nave_extraterrestre", "etiqueta": "falsa",
+        "titulo": "Tuit: 3I/ATLAS envio un mensaje a la Tierra y la Tierra respondio",
+        "texto": (
+            "3I/ATLAS envio un mensaje a la Tierra ayer. Astronomos del telescopio James Webb "
+            "detectaron una senal organizada que no coincide con ninguna fuente natural, y la "
+            "Tierra respondio antes de que alguien pudiera detenerlo."
+        ),
+        "verificacion": "Falso. No cita fuente alguna y los comentarios lo senalaron como ficcion.",
+        "fuente": "Publicacion en X de @djshmbhu30",
+        "url": "https://x.com/djshmbhu30/status/1996619058670940365",
+    },
+    {
+        "id": "tui_f05", "tema": "nave_extraterrestre", "etiqueta": "falsa",
+        "titulo": "Video viral de Michio Kaku hablando del OVNI 3I/ATLAS",
+        "texto": (
+            "Video viral del fisico Michio Kaku hablando del OVNI 3I/Atlas. Todo parece un "
+            "falso hecho con IA. El mundo se va a volver muy raro."
+        ),
+        "verificacion": "Deepfake. Kaku y Brian Cox denunciaron videos con IA hechos sin su permiso.",
+        "fuente": "Publicacion en X de Tom Morgan",
+        "url": "https://x.com/tomowenmorgan/status/1978626921823945006",
+    },
+    {
+        "id": "tui_f06", "tema": "impacto_inminente", "etiqueta": "falsa",
+        "titulo": "Tuit: 3I/ATLAS se fragmento y los pedazos vienen hacia la Tierra",
+        "texto": (
+            "Como un cancer digital viral, circula la noticia de que el cometa 3I/ATLAS se "
+            "fragmento y los pedazos se dirigen amenazantes hacia la Tierra. Mis mensajes "
+            "directos estan llenos de preguntas preocupadas."
+        ),
+        "verificacion": (
+            "Falso. La astronoma que publico el tuit lo califica de falso y critica que el "
+            "resumen de IA de Google lo repitiera."
+        ),
+        "fuente": "Publicacion en X de Marian Rudnyk",
+        "url": "https://x.com/MarianRudnyk/status/1974665740600115629",
+    },
+    {
+        "id": "tui_f07", "tema": "impacto_inminente", "etiqueta": "falsa",
+        "titulo": "Tuit: NASA activo el Protocolo de Defensa Planetaria por 3I/ATLAS",
+        "texto": (
+            "NASA activo su Protocolo de Defensa Planetaria tras detectar a 3I/ATLAS. "
+            "Informe en espanol revela que la agencia entro en modo de defensa."
+        ),
+        "verificacion": "Sin respaldo. IBTimes no encontro documentacion de que NASA iniciara ese proceso.",
+        "fuente": "Publicacion en X / IBTimes UK",
+        "url": "https://www.ibtimes.co.uk/3i-atlas-update-spanish-report-claims-nasa-triggered-defense-protocol-after-detection-1750908",
+    },
+    {
+        "id": "tui_f08", "tema": "imagenes_falsas", "etiqueta": "falsa",
+        "titulo": "Tuit: imagenes de rayos X muestran el motor de una nave en 3I/ATLAS",
+        "texto": (
+            "Nuevas imagenes de rayos X de 3I/ATLAS revelan lo que parece el motor de una nave "
+            "espacial. Esto lo cambia todo."
+        ),
+        "verificacion": (
+            "Falso. La imagen preliminar de XRISM es una nube difusa, compatible con una coma "
+            "cometaria normal."
+        ),
+        "fuente": "Publicacion en X (dic 2025) / IBTimes UK",
+        "url": "https://www.ibtimes.co.uk/spaceship-engine-found-new-images-3i-atlas-here-truth-1761402",
+    },
+    {
+        "id": "tui_f09", "tema": "imagenes_falsas", "etiqueta": "falsa",
+        "titulo": "Foto sin verificar y video japones de 3I/ATLAS se hacen virales",
+        "texto": (
+            "Una foto sin verificar y un video japones de 3I/ATLAS se vuelven virales. El "
+            "silencio de la NASA alimenta la desinformacion sobre el cometa interestelar."
+        ),
+        "verificacion": "Sin verificar. WION senala que el material no esta confirmado.",
+        "fuente": "Publicacion en X de WION",
+        "url": "https://x.com/WIONews/status/1985970335586664758",
+    },
+    {
+        "id": "tui_v01", "tema": "nave_extraterrestre", "etiqueta": "verdadera",
+        "titulo": "Grok responde: 3I/ATLAS es un cometa natural en orbita hiperbolica",
+        "texto": (
+            "3I/ATLAS es el tercer cometa interestelar conocido, descubierto en julio de 2025 "
+            "por ATLAS de NASA. Tiene una orbita hiperbolica, nucleo de hielo y coma con CO2, "
+            "agua y otros materiales cometarios tipicos. Avi Loeb especulo que podria ser "
+            "tecnologia alienigena, pero los astronomos confirman que es natural."
+        ),
+        "verificacion": "Consistente con la informacion cientifica general (respuesta de un chatbot).",
+        "fuente": "Respuesta de Grok en X",
+        "url": "https://x.com/grok/status/1965187821284851717",
+    },
+    {
+        "id": "tui_v02", "tema": "impacto_inminente", "etiqueta": "verdadera",
+        "titulo": "Space 360: un turista cosmico que no amenaza a la Tierra",
+        "texto": (
+            "Hay un turista cosmico en nuestro sistema solar. Conoce a 3I/ATLAS, un cometa "
+            "interestelar recien descubierto que llega desde el espacio profundo. Pasara lo "
+            "mas cerca del Sol en octubre, justo dentro de la orbita de Marte. No representa "
+            "ninguna amenaza para la Tierra."
+        ),
+        "verificacion": "Consistente con NASA/JPL.",
+        "fuente": "Publicacion en X de Space 360",
+        "url": "https://x.com/Space360HQ/status/1941484960826916909",
+    },
+]
+for _t in _TUITS:
+    _t["tipo"] = "tuit"
+NOTICIAS.extend(_TUITS)
